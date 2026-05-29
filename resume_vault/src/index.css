@@ -1,0 +1,49 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-light: #ffffff;
+  --color-dark: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: var(--color-light);
+    background: var(--color-dark);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    color: var(--color-dark);
+    background: var(--color-light);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+}
+
+@media print {
+  /* Hide everything */
+  body * {
+    visibility: hidden !important;
+  }
+  /* Show only the printable resume element and its children */
+  #printable-resume-card,
+  #printable-resume-card * {
+    visibility: visible !important;
+  }
+  /* Position the printable resume at the top-left */
+  #printable-resume-card {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: white !important;
+    color: black !important;
+  }
+}
+
